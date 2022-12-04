@@ -14,13 +14,14 @@ fun MyButton(
     modifier: Modifier = Modifier,
     text: String? = null,
     enabled: Boolean = true,
+    isDark: Boolean = true
 ) {
     Button(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = MaterialTheme.colors.primary
+            backgroundColor = if (isDark) MaterialTheme.colors.secondaryVariant else MaterialTheme.colors.primaryVariant
         )
     ) {
         if (!text.isNullOrBlank()) {
